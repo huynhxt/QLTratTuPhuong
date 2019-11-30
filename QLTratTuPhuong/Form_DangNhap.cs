@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace QLTratTuPhuong
 {
-    public partial class Form1 : Form
+    public partial class Form_DangNhap : Form
     {
-        public Form1()
+        public Form_DangNhap()
         {
             InitializeComponent();
+        }
+
+        private void button_dangnhap_Click(object sender, EventArgs e)
+        {
+            Form_Admin form = new Form_Admin();
+            form.Show();
         }
     }
 }
