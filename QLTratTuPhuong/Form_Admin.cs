@@ -15,17 +15,21 @@ namespace QLTratTuPhuong
     {
         private SqlConnection con = new SqlConnection(@"Data Source=localhost\sqlexpress;Initial Catalog=QLP;Integrated Security=True");
         private int MaDonNguoiDan;
-        
+        public NguoiQuanLy nguoiQuanLy;
+        public Form_Admin(NguoiQuanLy nguoiQuanLy)
+        {
+            InitializeComponent();
+            this.nguoiQuanLy = nguoiQuanLy;
+            MessageBox.Show(nguoiQuanLy.HoTengetset);
+        }
         public Form_Admin()
         {
             InitializeComponent();
             
         }
-
         private void Form_Admin_Load(object sender, EventArgs e)
         {
             loaddata();
-
         }
 
         private void loaddata()
@@ -46,16 +50,48 @@ namespace QLTratTuPhuong
         private void dataGridView_admin_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             string a = dataGridView_admin.Rows[e.RowIndex].Cells[0].Value.ToString();
-            MaDonNguoiDan = Int32.Parse(a);
+            Int32ParseMaSo(a);
+            MaDonNguoiDan = Int32ParseMaSo(a);
             richTextBox_NoiDungAdmin.Text = dataGridView_admin.Rows[e.RowIndex].Cells["NoiDung"].Value.ToString();
             
         }
 
         private void button_TaoDon_Click(object sender, EventArgs e)
         {
-            int lastRowIndex = dataGridView_admin.Rows.Count - 1;
-            SqlCommand cmd = new SqlCommand("INSERT INTO DonGiaiQuyet VALUE(DGQ"+lastRowIndex + 1+")", con);
-            
+            //int lastRowIndex = dataGridView_admin.Rows.Count - 1;
+            int dem = DemSoRecordDonGiaiQuyet();
+            dem = dem + 1;
+            //string nulll = "NULL";
+            DateTime dateTime = new DateTime(dateTimePicker_admin.Value.Year,dateTimePicker_admin.Value.Month,dateTimePicker_admin.Value.Day);
+            //SqlCommand cmd = new SqlCommand("INSERT INTO DonGiaiQuyet VALUES (DGQ" + dem+1 + ", " + richTextBox_NoiDungAdmin.Text + ")", con);
+            SqlCommand cmd = new SqlCommand("INSERT INTO DonGiaiQuyet VALUES ('DGQ" + dem +"', '"+richTextBox_NoiDungAdmin.Text+"', '"+dateTime.ToString()+"', '"+nguoiQuanLy.MaNguoiQuanLygetset+"', 'DND"+this.MaDonNguoiDan+"')", con);
+            //SqlDataReader reader = cmd.ExecuteReader();
+            if (cmd.ExecuteNonQuery() > 0) MessageBox.Show("Them thanh cong");
+            //while (reader.Read())
+            //{
+
+            //}
+        }
+        private int Int32ParseMaSo(string Ma)
+        {
+            string[] delimiterChars = {"ND", "DGQ", "NQL", "DND", "KP"};
+            String[] Maarr = Ma.Split(delimiterChars, System.StringSplitOptions.RemoveEmptyEntries);
+            return Int32.Parse(Maarr[0]);
+        }
+        private int DemSoRecordDonGiaiQuyet()
+        {
+            //con = new SqlConnection(@"Data Source=localhost\sqlexpress;Initial Catalog=QLP;Integrated Security=True");
+            con.Open();
+            int count=0;
+            SqlCommand cmd = new SqlCommand("SELECT COUNT(MaDonGiaiQuyet) FROM DonGiaiQuyet", con);
+            //SqlDataAdapter da = new SqlDataAdapter(cmd);
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                count = Int32.Parse(reader[0].ToString());
+            }
+            reader.Close();
+            return count;
         }
     }
 }

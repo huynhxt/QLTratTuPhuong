@@ -31,6 +31,7 @@
             this.dataGridView_admin = new System.Windows.Forms.DataGridView();
             this.richTextBox_NoiDungAdmin = new System.Windows.Forms.RichTextBox();
             this.button_TaoDon = new System.Windows.Forms.Button();
+            this.dateTimePicker_admin = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_admin)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,11 +62,20 @@
             this.button_TaoDon.UseVisualStyleBackColor = true;
             this.button_TaoDon.Click += new System.EventHandler(this.button_TaoDon_Click);
             // 
+            // dateTimePicker_admin
+            // 
+            this.dateTimePicker_admin.Location = new System.Drawing.Point(177, 348);
+            this.dateTimePicker_admin.Name = "dateTimePicker_admin";
+            this.dateTimePicker_admin.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker_admin.TabIndex = 4;
+            this.dateTimePicker_admin.Value = new System.DateTime(2019, 12, 2, 0, 0, 0, 0);
+            // 
             // Form_Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dateTimePicker_admin);
             this.Controls.Add(this.button_TaoDon);
             this.Controls.Add(this.richTextBox_NoiDungAdmin);
             this.Controls.Add(this.dataGridView_admin);
@@ -82,5 +92,6 @@
         private System.Windows.Forms.DataGridView dataGridView_admin;
         private System.Windows.Forms.RichTextBox richTextBox_NoiDungAdmin;
         private System.Windows.Forms.Button button_TaoDon;
+        private System.Windows.Forms.DateTimePicker dateTimePicker_admin;
     }
 }
