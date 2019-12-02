@@ -69,6 +69,7 @@
             // 
             // dateTimePicker_NguoiDan
             // 
+            this.dateTimePicker_NguoiDan.Enabled = false;
             this.dateTimePicker_NguoiDan.Location = new System.Drawing.Point(178, 313);
             this.dateTimePicker_NguoiDan.Name = "dateTimePicker_NguoiDan";
             this.dateTimePicker_NguoiDan.Size = new System.Drawing.Size(200, 20);

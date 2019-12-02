@@ -70,6 +70,7 @@
             // 
             // dateTimePicker_admin
             // 
+            this.dateTimePicker_admin.Enabled = false;
             this.dateTimePicker_admin.Location = new System.Drawing.Point(177, 348);
             this.dateTimePicker_admin.Name = "dateTimePicker_admin";
             this.dateTimePicker_admin.Size = new System.Drawing.Size(200, 20);
