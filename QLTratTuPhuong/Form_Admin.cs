@@ -43,8 +43,6 @@ namespace QLTratTuPhuong
             da.Fill(dt);
             //Tải dữ liệu lên dataGridView
             dataGridView_admin.DataSource = dt;
-
-
         }
 
         private void dataGridView_admin_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -79,9 +77,9 @@ namespace QLTratTuPhuong
             String[] Maarr = Ma.Split(delimiterChars, System.StringSplitOptions.RemoveEmptyEntries);
             return Int32.Parse(Maarr[0]);
         }
-        private int DemSoRecordDonGiaiQuyet()
+        public int DemSoRecordDonGiaiQuyet()
         {
-            //con = new SqlConnection(@"Data Source=localhost\sqlexpress;Initial Catalog=QLP;Integrated Security=True");
+            con = new SqlConnection(@"Data Source=localhost\sqlexpress;Initial Catalog=QLP;Integrated Security=True");
             con.Open();
             int count=0;
             SqlCommand cmd = new SqlCommand("SELECT COUNT(MaDonGiaiQuyet) FROM DonGiaiQuyet", con);

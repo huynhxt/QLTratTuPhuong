@@ -18,7 +18,7 @@ namespace QLTratTuPhuong
         public Form_DangNhap()
         {
             InitializeComponent();
-            //nguoiQuanLy = new NguoiQuanLy();
+            
         }
 
         private void button_dangnhap_Click(object sender, EventArgs e)
@@ -27,7 +27,7 @@ namespace QLTratTuPhuong
             //con.Open();
             if (Check_Account_NQL_Exist() == true)
             {
-                MessageBox.Show("Tài khoản tồn tại");
+                MessageBox.Show("Tài khoản Quản lí đăng nhập thành công");
                 NguoiQuanLy nguoiQuanLy = new NguoiQuanLy();
                 nguoiQuanLy.Load_Account_Exist(textBox_taikhoan.Text, textBox_matkhau.Text);
                 Form_Admin form = new Form_Admin(nguoiQuanLy);
@@ -41,7 +41,7 @@ namespace QLTratTuPhuong
             {
                 if(Check_Account_ND_Exist() == true)
                 {
-                    MessageBox.Show("Tài khoản ND tồn tại");
+                    MessageBox.Show("Tài khoản Người dân đăng nhập thành công");
                     NguoiDan nguoiDan = new NguoiDan();
                     nguoiDan.Load_Account_Exist(textBox_taikhoan.Text, textBox_matkhau.Text);
                     Form_NguoiDan form = new Form_NguoiDan(nguoiDan);
@@ -49,33 +49,16 @@ namespace QLTratTuPhuong
                     this.Hide();
 
                 }
+                else
+                {
+                    MessageBox.Show("Tài khoản hoặc mật khẩu chưa đúng");
+                }
             }
+            
             
         }
 
-        /*private NguoiQuanLy Load_Account_Exist()
-        {
-            con = new SqlConnection(@"Data Source=localhost\sqlexpress;Initial Catalog=QLP;Integrated Security=True");
-            con.Open();
-            string username = textBox_taikhoan.Text;
-            string password = textBox_matkhau.Text;
-            SqlCommand cmd = new SqlCommand("SELECT * FROM NguoiQuanLy", con);
-            SqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
-            {
-                if (username == (string)reader[2] && password == (string)reader[3])
-                {
-                    
-                    nguoiQuanLy.MaNguoiQuanLygetset = (string)reader[0];
-                    nguoiQuanLy.HoTengetset = (string)reader[1];
-                    nguoiQuanLy.Usernamegetset = (string)reader[2];
-                    nguoiQuanLy.Passwordgetset = (string)reader[3];
-                }
-            }
-            con.Close();
-            return null;
-        }
-        */
+
         private bool Check_Account_NQL_Exist()
         {
             con = new SqlConnection(@"Data Source=localhost\sqlexpress;Initial Catalog=QLP;Integrated Security=True");
