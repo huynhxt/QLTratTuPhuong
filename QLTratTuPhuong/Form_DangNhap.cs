@@ -32,7 +32,7 @@ namespace QLTratTuPhuong
                 nguoiQuanLy.Load_Account_Exist(textBox_taikhoan.Text, textBox_matkhau.Text);
                 Form_Admin form = new Form_Admin(nguoiQuanLy);
                 
-                MessageBox.Show(nguoiQuanLy.HoTengetset);
+                
 
                 form.Show();
                 this.Hide();

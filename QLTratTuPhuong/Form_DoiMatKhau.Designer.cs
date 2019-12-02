@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_DoiMatKhau));
             this.textBox_MatKhauCu = new System.Windows.Forms.TextBox();
             this.label_MatKhauCu = new System.Windows.Forms.Label();
             this.label_MatKhauMoi = new System.Windows.Forms.Label();
@@ -42,6 +43,7 @@
             this.textBox_MatKhauCu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_MatKhauCu.Location = new System.Drawing.Point(241, 60);
             this.textBox_MatKhauCu.Name = "textBox_MatKhauCu";
+            this.textBox_MatKhauCu.PasswordChar = '*';
             this.textBox_MatKhauCu.Size = new System.Drawing.Size(219, 26);
             this.textBox_MatKhauCu.TabIndex = 0;
             // 
@@ -70,16 +72,18 @@
             this.textBox_MatKhauMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_MatKhauMoi.Location = new System.Drawing.Point(241, 181);
             this.textBox_MatKhauMoi.Name = "textBox_MatKhauMoi";
+            this.textBox_MatKhauMoi.PasswordChar = '*';
             this.textBox_MatKhauMoi.Size = new System.Drawing.Size(219, 26);
-            this.textBox_MatKhauMoi.TabIndex = 3;
+            this.textBox_MatKhauMoi.TabIndex = 2;
             // 
             // textBox_XacNhanMatKhau
             // 
             this.textBox_XacNhanMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_XacNhanMatKhau.Location = new System.Drawing.Point(241, 118);
             this.textBox_XacNhanMatKhau.Name = "textBox_XacNhanMatKhau";
+            this.textBox_XacNhanMatKhau.PasswordChar = '*';
             this.textBox_XacNhanMatKhau.Size = new System.Drawing.Size(219, 26);
-            this.textBox_XacNhanMatKhau.TabIndex = 5;
+            this.textBox_XacNhanMatKhau.TabIndex = 1;
             // 
             // label1
             // 
@@ -113,8 +117,9 @@
             this.Controls.Add(this.label_MatKhauMoi);
             this.Controls.Add(this.label_MatKhauCu);
             this.Controls.Add(this.textBox_MatKhauCu);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_DoiMatKhau";
-            this.Text = "Form_DoiMatKhau";
+            this.Text = "Quản lí trật tự/an ninh phường";
             this.ResumeLayout(false);
             this.PerformLayout();
 

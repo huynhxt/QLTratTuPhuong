@@ -20,7 +20,7 @@ namespace QLTratTuPhuong
         {
             InitializeComponent();
             this.nguoiQuanLy = nguoiQuanLy;
-            MessageBox.Show(nguoiQuanLy.HoTengetset);
+            
         }
         public Form_Admin()
         {

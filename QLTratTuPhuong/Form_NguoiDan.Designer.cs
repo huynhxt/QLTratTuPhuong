@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_NguoiDan));
             this.dataGridView_NguoiDan = new System.Windows.Forms.DataGridView();
             this.richTextBox_NoiDung = new System.Windows.Forms.RichTextBox();
             this.button_GuiDon = new System.Windows.Forms.Button();
@@ -140,8 +141,9 @@
             this.Controls.Add(this.button_GuiDon);
             this.Controls.Add(this.richTextBox_NoiDung);
             this.Controls.Add(this.dataGridView_NguoiDan);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_NguoiDan";
-            this.Text = "Form_NguoiDan";
+            this.Text = "Quản lí trật tự/an ninh phường";
             this.Load += new System.EventHandler(this.Form_NguoiDan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_NguoiDan)).EndInit();
             this.ResumeLayout(false);

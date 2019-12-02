@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_DangNhap));
             this.label_title = new System.Windows.Forms.Label();
             this.button_dangnhap = new System.Windows.Forms.Button();
             this.textBox_taikhoan = new System.Windows.Forms.TextBox();
@@ -69,6 +70,7 @@
             this.textBox_matkhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_matkhau.Location = new System.Drawing.Point(242, 246);
             this.textBox_matkhau.Name = "textBox_matkhau";
+            this.textBox_matkhau.PasswordChar = '*';
             this.textBox_matkhau.Size = new System.Drawing.Size(340, 26);
             this.textBox_matkhau.TabIndex = 3;
             // 
@@ -103,6 +105,7 @@
             this.Controls.Add(this.textBox_taikhoan);
             this.Controls.Add(this.button_dangnhap);
             this.Controls.Add(this.label_title);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_DangNhap";
             this.Text = "Quản lí trật tự/an ninh phường";
             this.ResumeLayout(false);

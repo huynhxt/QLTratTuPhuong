@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Admin));
             this.dataGridView_admin = new System.Windows.Forms.DataGridView();
             this.richTextBox_NoiDungAdmin = new System.Windows.Forms.RichTextBox();
             this.button_TaoDon = new System.Windows.Forms.Button();
@@ -152,8 +153,9 @@
             this.Controls.Add(this.button_TaoDon);
             this.Controls.Add(this.richTextBox_NoiDungAdmin);
             this.Controls.Add(this.dataGridView_admin);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_Admin";
-            this.Text = "Admin";
+            this.Text = "Quản lí trật tự/an ninh phường";
             this.Load += new System.EventHandler(this.Form_Admin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_admin)).EndInit();
             this.ResumeLayout(false);
