@@ -58,6 +58,13 @@
     <Compile Include="Form_Admin.Designer.cs">
       <DependentUpon>Form_Admin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_NguoiDan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_NguoiDan.Designer.cs">
+      <DependentUpon>Form_NguoiDan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NguoiDan.cs" />
     <Compile Include="NguoiQuanLy.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

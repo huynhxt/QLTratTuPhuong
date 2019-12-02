@@ -67,6 +67,7 @@ namespace QLTratTuPhuong
             SqlCommand cmd = new SqlCommand("INSERT INTO DonGiaiQuyet VALUES ('DGQ" + dem +"', '"+richTextBox_NoiDungAdmin.Text+"', '"+dateTime.ToString()+"', '"+nguoiQuanLy.MaNguoiQuanLygetset+"', 'DND"+this.MaDonNguoiDan+"')", con);
             //SqlDataReader reader = cmd.ExecuteReader();
             if (cmd.ExecuteNonQuery() > 0) MessageBox.Show("Them thanh cong");
+            else MessageBox.Show("Không thành công");
             //while (reader.Read())
             //{
 
@@ -92,6 +93,22 @@ namespace QLTratTuPhuong
             }
             reader.Close();
             return count;
+        }
+
+        private void button_GuiDGQ_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            string NoiDung = richTextBox_NoiDungAdmin.Text;
+            SqlCommand cmd = new SqlCommand("UPDATE DonNguoiDan SET TrangThai = 'dagiaiquyet', NoiDungDonGiaiQuyet = '"+NoiDung+"' WHERE MaDonNguoiDan = 'DND"+MaDonNguoiDan+"'",con);
+            if (cmd.ExecuteNonQuery() > 0) MessageBox.Show("Gửi thành công");
+            else MessageBox.Show("Không thành công");
+
+        }
+
+        private void button_Lammoi_Click(object sender, EventArgs e)
+        {
+            dataGridView_admin.DataSource = null;
+            loaddata();
         }
     }
 }

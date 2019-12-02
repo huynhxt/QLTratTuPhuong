@@ -25,8 +25,9 @@ namespace QLTratTuPhuong
         {
             
             //con.Open();
-            if (Check_Account_Exist() == true)
+            if (Check_Account_NQL_Exist() == true)
             {
+                MessageBox.Show("Tài khoản tồn tại");
                 NguoiQuanLy nguoiQuanLy = new NguoiQuanLy();
                 nguoiQuanLy.Load_Account_Exist(textBox_taikhoan.Text, textBox_matkhau.Text);
                 Form_Admin form = new Form_Admin(nguoiQuanLy);
@@ -38,12 +39,21 @@ namespace QLTratTuPhuong
             }
             else
             {
-                MessageBox.Show("Tai khoan khong ton tai");
+                if(Check_Account_ND_Exist() == true)
+                {
+                    MessageBox.Show("Tài khoản ND tồn tại");
+                    NguoiDan nguoiDan = new NguoiDan();
+                    nguoiDan.Load_Account_Exist(textBox_taikhoan.Text, textBox_matkhau.Text);
+                    Form_NguoiDan form = new Form_NguoiDan(nguoiDan);
+                    form.Show();
+                    this.Hide();
+
+                }
             }
             
         }
 
-        private NguoiQuanLy Load_Account_Exist()
+        /*private NguoiQuanLy Load_Account_Exist()
         {
             con = new SqlConnection(@"Data Source=localhost\sqlexpress;Initial Catalog=QLP;Integrated Security=True");
             con.Open();
@@ -65,7 +75,8 @@ namespace QLTratTuPhuong
             con.Close();
             return null;
         }
-        private bool Check_Account_Exist()
+        */
+        private bool Check_Account_NQL_Exist()
         {
             con = new SqlConnection(@"Data Source=localhost\sqlexpress;Initial Catalog=QLP;Integrated Security=True");
             con.Open();
@@ -80,9 +91,29 @@ namespace QLTratTuPhuong
                     return true;
                 }
             }
+            reader.Close();
+            
             con.Close();
             return false;
         }
-
+        private bool Check_Account_ND_Exist()
+        {
+            con = new SqlConnection(@"Data Source=localhost\sqlexpress;Initial Catalog=QLP;Integrated Security=True");
+            con.Open();
+            string username = textBox_taikhoan.Text;
+            string password = textBox_matkhau.Text;
+            SqlCommand cmd = new SqlCommand("SELECT * FROM NguoiDan", con);
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                if (username == (string)reader[2] && password == (string)reader[3])
+                {
+                    return true;
+                }
+            }
+            
+            con.Close();
+            return false;
+        }
     }
 }
