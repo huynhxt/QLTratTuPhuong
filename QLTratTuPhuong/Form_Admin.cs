@@ -108,5 +108,19 @@ namespace QLTratTuPhuong
             dataGridView_admin.DataSource = null;
             loaddata();
         }
+
+        private void button_XemThongTinCaNhan_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Mã số: " + nguoiQuanLy.MaNguoiQuanLygetset + "\n" +
+                            "Họ và tên: " + nguoiQuanLy.HoTengetset + "\n" +
+                            "Username: " + nguoiQuanLy.Usernamegetset + "\n"
+                            );
+        }
+
+        private void button_DoiMatKhau_Click(object sender, EventArgs e)
+        {
+            Form form = new Form_DoiMatKhau(this.nguoiQuanLy);
+            form.Show();
+        }
     }
 }

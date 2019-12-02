@@ -60,7 +60,8 @@ namespace QLTratTuPhuong
         }
         private void Update_Password(NguoiQuanLy nguoiQuanLy, string newPassword)
         {
-            SqlCommand cmd = new SqlCommand("UPDATE NguoiDan SET Password = '" + newPassword + "' WHERE MaNguoiDan = '" + nguoiQuanLy.MaNguoiQuanLygetset + "'");
+            con.Open();
+            SqlCommand cmd = new SqlCommand("UPDATE NguoiQuanLy SET Password = '" + newPassword + "' WHERE MaNguoiQuanLy = '" + nguoiQuanLy.MaNguoiQuanLygetset + "'",con);
             if (cmd.ExecuteNonQuery() > 0)
             {
                 MessageBox.Show("Cập nhật mật khấu mới thành công");

@@ -107,7 +107,6 @@ namespace QLTratTuPhuong
         {
             Form form = new Form_DoiMatKhau(this.nguoiDan);
             form.Show();
-
         }
 
         private void button_LamMoi_Click(object sender, EventArgs e)
