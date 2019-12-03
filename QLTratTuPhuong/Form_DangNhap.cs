@@ -14,7 +14,7 @@ namespace QLTratTuPhuong
     public partial class Form_DangNhap : Form
     {
         private SqlConnection con; //= new SqlConnection(@"Data Source=localhost\sqlexpress;Initial Catalog=QLP;Integrated Security=True");
-        private NguoiQuanLy nguoiQuanLy;
+        //private NguoiQuanLy nguoiQuanLy;
         public Form_DangNhap()
         {
             InitializeComponent();

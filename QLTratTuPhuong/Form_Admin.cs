@@ -64,7 +64,7 @@ namespace QLTratTuPhuong
             //SqlCommand cmd = new SqlCommand("INSERT INTO DonGiaiQuyet VALUES (DGQ" + dem+1 + ", " + richTextBox_NoiDungAdmin.Text + ")", con);
             SqlCommand cmd = new SqlCommand("INSERT INTO DonGiaiQuyet VALUES ('DGQ" + dem +"', '"+richTextBox_NoiDungAdmin.Text+"', '"+dateTime.ToString()+"', '"+nguoiQuanLy.MaNguoiQuanLygetset+"', 'DND"+this.MaDonNguoiDan+"')", con);
             //SqlDataReader reader = cmd.ExecuteReader();
-            if (cmd.ExecuteNonQuery() > 0) MessageBox.Show("Them thanh cong");
+            if (cmd.ExecuteNonQuery() > 0) MessageBox.Show("Thêm thành công");
             else MessageBox.Show("Không thành công");
             //while (reader.Read())
             //{
